@@ -79,3 +79,5 @@ gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem "pg", "~> 1.5"
+
+gem 'rexml', '~> 3.2', '>= 3.2.4'
