@@ -5,7 +5,7 @@ Rails.application.configure do
 
   # Devise section
   config.action_mailer.default_url_options = {
-    host: 'xxxxx',
+    host: 'https://irish-rail-app-v6-65393ddc6999.herokuapp.com',
   }
   config.action_mailer.delivery_method = :smtp
 
