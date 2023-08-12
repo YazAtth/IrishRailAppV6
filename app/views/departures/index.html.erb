@@ -5,7 +5,7 @@
 
   <%= render partial: "shared/navbar", locals: {current_page: "departures"} %>
 
-  <p class="m-5 text-gray-500">
+  <p class="ml-5 text-gray-500">
     Showing all departures from <i><%= session[:origin_station] %></i>
     <%#= session[:destination_station] == "All" ?  "": "heading towards #{session[:destination_station]}"%>
     <% if session[:destination_station] != "All" %>
@@ -13,6 +13,11 @@
     <% end %>
     in the next 90 minutes
   </p>
+
+  <%= button_to departures_filter_search_path do %>
+    <p class="ml-5 mb-4 p-2 bg-gray-200 rounded-sm hover:bg-gray-400 cursor-pointer">Change Journey</p>
+  <% end %>
+
   <% @train_departures.each do |departure| %>
     <%= render partial: "shared/card", locals: {
       departure: departure
