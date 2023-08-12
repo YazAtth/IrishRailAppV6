@@ -1,3 +1,13 @@
+
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= button_to omniauth_authorize_path(resource_name, provider), data: { turbo: false }, class: " w-full flex items-center p-2 mt-4 mb-7 bg-gray-300 hover:bg-gray-400 cursor-pointer text-black pl-9" do%>
+      <%= image_tag("google_icon.png", class: "img-responsive", style: "max-width: 3em;") %>
+      <p>Continue with Google</p>
+    <% end %>
+  <% end %>
+<% end %>
+
 <%- if controller_name != 'sessions' %>
   <%= link_to "Log in", new_session_path(resource_name) %><br />
 <% end %>
@@ -18,8 +28,4 @@
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end %>
 
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= button_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), data: { turbo: false } %><br />
-  <% end %>
-<% end %>
+
