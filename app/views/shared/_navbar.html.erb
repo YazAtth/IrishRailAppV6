@@ -15,8 +15,14 @@
       <%= link_to "About", about_page_path %>
     </li>
     <li class="text-gray-400">|</li>
-    <li class="<%= current_page == "login" ? "text-black" : "text-gray-500" %>">Login</li>
-<!--    <li class="text-gray-400">|</li>-->
+    <li class="<%= current_page == "login" ? "text-black" : "text-gray-500" %>">
+
+      <% if user_signed_in? %>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path %>
+      <% end %>
+    </li>
   </ul>
 
 </div>
