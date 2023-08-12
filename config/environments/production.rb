@@ -3,6 +3,26 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Devise section
+  config.action_mailer.default_url_options = {
+    host: 'xxxxx',
+  }
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    :user_name => 'apikey', # This is the string literal 'apikey', NOT the ID of your API key
+    :password => ENV["SENDGRID_API_KEY"], # This is the secret sendgrid API key which was issued during API key creation
+    :domain => 'login-confirmation-email-a0bd9a7cc59f.herokuapp.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    # :port => 2525,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+
+  config.action_mailer.raise_delivery_errors = true
+  #####
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
