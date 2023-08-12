@@ -1,0 +1,46 @@
+
+<% departure_time = "" %>
+<% if departure["Expdepart"] != "00:00" %>
+  <% departure_time = departure["Expdepart"] %>
+<% else %>
+  <% departure_time = departure["Exparrival"] %>
+<% end %>
+
+
+
+<div class="card bg-gray-200 m-5 p-3">
+<!--  <p class="text-red-500"><pre><%#= JSON.pretty_generate(departure) %></pre></p>-->
+
+
+  <div class="card-title">
+    <p class="text-sm">Destination</p>
+    <h1 class='text-gray-700 font-semibold'><%= departure["Destination"] %></h1>
+  </div>
+
+  <div class="card-departure-time">
+    <div class="departing-at-text"><p class="text-sm text-gray-500">Departing at</p></div>
+    <div class="departure-time"><p class="text-3xl"><%= departure_time %></p></div>
+    <div class="flex text-sm font-light">
+      <p>
+        <%= departure["Duein"] %>
+      </p>
+
+      <% if departure["Late"] != "0" %>
+        <p class="text-red-500">+<%= departure["Late"] %></p>
+      <% end %>
+
+
+      <p>&nbsp;mins</p>
+    </div>
+  </div>
+
+  <div class="origin">
+    <div class="text-gray-500"><p>Starting from</p></div>
+    <div><p><%= departure["Origin"] %></p></div>
+  </div>
+
+  <div class="train-route font-medium">
+    <%= link_to "See Train Route", train_route_page_path(train_code: departure["Traincode"]) %>
+  </div>
+
+</div>

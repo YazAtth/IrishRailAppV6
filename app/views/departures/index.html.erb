@@ -1,0 +1,24 @@
+
+<!--<pre><%#= @response_pretty %></pre>-->
+
+<div class="container">
+
+  <%= render partial: "shared/navbar", locals: {current_page: "departures"} %>
+
+  <p class="m-5 text-gray-500">
+    Showing all departures from <i><%= session[:origin_station] %></i>
+    <%#= session[:destination_station] == "All" ?  "": "heading towards #{session[:destination_station]}"%>
+    <% if session[:destination_station] != "All" %>
+      heading towards <i><%= session[:destination_station] %></i>
+    <% end %>
+    in the next 90 minutes
+  </p>
+  <% @train_departures.each do |departure| %>
+    <%= render partial: "shared/card", locals: {
+      departure: departure
+    } %>
+  <% end %>
+
+<!--  <pre><%#= @response_pretty %></pre>-->
+
+</div>

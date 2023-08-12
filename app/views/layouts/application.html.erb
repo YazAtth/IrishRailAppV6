@@ -3,6 +3,8 @@
   <head>
     <title>IrishRailAppV6</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +13,8 @@
   </head>
 
   <body>
-    <%= yield %>
+    <main class="container mx-auto px-5">
+  <%= yield %>
+    </main>
   </body>
 </html>

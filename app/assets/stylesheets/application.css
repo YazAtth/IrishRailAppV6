@@ -13,3 +13,67 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    background-color: #f4f4fb;
+}
+
+
+.card {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        'top-left top-right'
+        'bottom-left bottom-right';
+
+    border-radius: 1em;
+}
+
+.card * {
+    /*border: 1px solid red;*/
+}
+
+.card-title {
+    font-size: 2.5em;
+    /*background-color: red;*/
+}
+
+.card-departure-time {
+    /*background-color: blue;*/
+    /*display: grid;*/
+    /*grid-template-rows: 1fr 2fr;*/
+    /*grid-template-areas:*/
+    /*    'top'*/
+    /*    'bottom';*/
+
+    justify-self: end;
+    font-size: 2em;
+}
+
+.departing-at-text {
+    /*grid-area: top;*/
+}
+
+
+
+.origin {
+    grid-area: bottom-left;
+    /*background-color: red;*/
+}
+
+.train-route {
+    grid-area: bottom-right;
+    justify-self: end;
+    /*border: 1px solid red;*/
+    display: flex;
+    flex-direction: column;
+
+}
+
+.train-route * {
+    /*align-self: end;*/
+    margin-top: auto;
+}
+
+

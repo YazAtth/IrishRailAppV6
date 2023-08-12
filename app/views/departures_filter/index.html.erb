@@ -1,0 +1,23 @@
+<div class="container">
+
+  <%= render partial: "shared/navbar", locals: {current_page: "departures"} %>
+
+
+  <%= form_tag departures_filter_search_path, method: :post do %>
+    <%= label_tag :origin_station, 'Origin Station:' %>
+    <%= select_tag :origin_station, options_for_select(@station_names, "Dublin Connolly") %>>
+    <br>
+
+    <%= label_tag :destination_station, 'Destination Station:' %>
+    <% destination_station_names = ["All"] + @station_names %>
+    <%# destination_station_names.append("All") %>
+    <%= select_tag :destination_station, options_for_select(destination_station_names, "All") %>
+    <br>
+
+    <%= submit_tag 'Search', class: "bg-blue-500 cursor-pointer" %>
+  <% end %>
+
+
+<!--  <pre><%#= JSON.pretty_generate(@response) %></pre>-->
+
+</div>

@@ -1,0 +1,10 @@
+<div class="container">
+
+  <%= render partial: "shared/navbar", locals: {current_page: "departures"} %>
+
+  <% @train_route.each do |stop| %>
+    <p><%= stop["LocationFullName"]%></p>
+  <% end %>
+
+
+</div>

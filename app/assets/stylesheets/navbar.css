@@ -1,0 +1,30 @@
+
+.navbar {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+
+    padding: 1em 1em 2em;
+}
+
+.navbar * {
+    /*border: 1px solid red;*/
+}
+
+.navbar-items {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: center; /* Vertical navbar item centering */
+    gap: 1.5rem;
+
+}
+
+.navbar-items li {
+    justify-self: center; /* Horizontal navbar item centering */
+}
+
+.active-navbar-item {
+    color: #9696ff;
+}
+
+
+
