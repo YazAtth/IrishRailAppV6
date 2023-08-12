@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
 
   root "home#index"
 
@@ -9,5 +10,7 @@ Rails.application.routes.draw do
   post "departures-filter", to: "departures_filter#search", as: :departures_filter_search
 
   get "train-route", to: "train_route#index", as: :train_route_page
+
+  get 'login', to: "login#index", as: :login_page
 
 end
