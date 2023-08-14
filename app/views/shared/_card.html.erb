@@ -54,14 +54,15 @@
     <div><p><%= departure["Origin"] %></p></div>
   </div>
 
-
-  <div class="next-train-time text-md text-gray-500">
-    <% if next_departure != nil %>
-      <p class="">Next train in <%= time_until_next_train %> mins</p>
-    <% else %>
-      <p class="">.....</p>
-    <% end %>
-  </div>
+  <% if session[:destination_station] != "All" %>
+    <div class="next-train-time text-md text-gray-500">
+      <% if next_departure != nil %>
+        <p class="">Next train in <%= time_until_next_train %> mins</p>
+      <% else %>
+        <p class="">.....</p>
+      <% end %>
+    </div>
+  <% end %>
 
   <div class="card-bottom-right">
 
