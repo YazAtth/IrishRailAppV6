@@ -13,7 +13,7 @@
 
 
   <div class="card-title">
-    <p class="text-sm">Destination</p>
+    <p class="text-sm text-gray-500">Destination</p>
     <h1 class='text-gray-700 font-semibold'><%= departure["Destination"] %></h1>
   </div>
 
@@ -40,7 +40,15 @@
   </div>
 
   <div class="train-route font-medium">
-    <%= link_to "See Train Route", train_route_page_path(train_code: departure["Traincode"]) %>
+    <div class="text-right font-normal">
+      <%= link_to train_route_page_path(train_code: departure["Traincode"]) do %>
+        <p class="p-1 mb-2 bg-gray-300 rounded-sm hover:bg-gray-400 cursor-pointer text-center">See Train Route</p>
+      <% end %>
+    </div>
+
+    <div>
+      <p class="text-sm text-gray-500">Next train in 50 mins</p>
+    </div>
   </div>
 
 </div>
