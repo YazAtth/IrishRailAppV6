@@ -54,20 +54,25 @@
     <div><p><%= departure["Origin"] %></p></div>
   </div>
 
-  <div class="train-route font-medium">
-    <div class="text-right font-normal">
-      <%= link_to train_route_page_path(train_code: departure["Traincode"]) do %>
-        <p class="p-1 mb-2 bg-gray-300 rounded-sm hover:bg-gray-400 cursor-pointer text-center">See Train Route</p>
-      <% end %>
+
+  <div class="next-train-time text-md text-gray-500">
+    <% if next_departure != nil %>
+      <p class="">Next train in <%= time_until_next_train %> mins</p>
+    <% else %>
+      <p class="">.....</p>
+    <% end %>
+  </div>
+
+  <div class="card-bottom-right">
+
+    <div class="train-route font-medium">
+      <div class="text-right font-normal">
+        <%= link_to train_route_page_path(train_code: departure["Traincode"]) do %>
+          <p class="bg-gray-300 rounded-sm hover:bg-gray-400 cursor-pointer text-center">See Train Route</p>
+        <% end %>
+      </div>
     </div>
 
-    <div class="text-right text-sm text-gray-500">
-      <% if next_departure != nil %>
-        <p class="">Next train in <%= time_until_next_train %> mins</p>
-      <% else %>
-        <p class="">.....</p>
-      <% end %>
-    </div>
   </div>
 
 </div>
