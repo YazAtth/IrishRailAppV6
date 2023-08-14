@@ -18,9 +18,17 @@
     <p class="ml-5 mb-4 p-2 bg-gray-200 rounded-sm hover:bg-gray-400 cursor-pointer">Change Journey</p>
   <% end %>
 
-  <% @train_departures.each do |departure| %>
+  <% @train_departures.each_with_index do |departure, index| %>
+
+    <% if index != @train_departures.length-1 %>
+      <% next_departure = @train_departures[index+1] %>
+    <% else %>
+      <% next_departure = nil %>
+    <% end %>
+
     <%= render partial: "shared/card", locals: {
-      departure: departure
+      departure: departure,
+      next_departure: next_departure
     } %>
   <% end %>
 

@@ -1,10 +1,25 @@
 
-<% departure_time = "" %>
+<% departure_time = "00:00" %>
 <% if departure["Expdepart"] != "00:00" %>
   <% departure_time = departure["Expdepart"] %>
 <% else %>
   <% departure_time = departure["Exparrival"] %>
 <% end %>
+
+
+<% time_until_next_train = -1 %>
+<% if next_departure != nil %>
+  <% next_departure_time = "00:00" %>
+  <% if next_departure["Expdepart"] != "00:00" %>
+    <% next_departure_time = next_departure["Expdepart"] %>
+  <% else %>
+    <% next_departure_time = next_departure["Exparrival"] %>
+  <% end %>
+
+  <% time_until_next_train =  ((Time.parse(next_departure_time) - Time.parse(departure_time))/60).to_i%>
+<% end %>
+
+
 
 
 
@@ -46,8 +61,12 @@
       <% end %>
     </div>
 
-    <div>
-      <p class="text-sm text-gray-500">Next train in 50 mins</p>
+    <div class="text-right text-sm text-gray-500">
+      <% if next_departure != nil %>
+        <p class="">Next train in <%= time_until_next_train %> mins</p>
+      <% else %>
+        <p class="">.....</p>
+      <% end %>
     </div>
   </div>
 
