@@ -28,8 +28,8 @@ body {
 /* Mobile Screens */
 @media only screen and (max-width: 639px) {
 
-    body {
-        background-color: red;
+    .body * {
+        /*border: 1px solid red;*/
     }
 
     .card {
@@ -41,15 +41,58 @@ body {
         'three four'
         'five six'
         'seven eight';
+        position: relative;
     }
 
     .card-title {
         grid-area: one;
+        font-size: 2.5em;
     }
 
-    .train-route {
-        grid-area: seven
+    .card-departure-time {
+        grid-area: two;
     }
+
+    .card-departure-time * {
+        text-align: right;
+    }
+
+    .due-in {
+        justify-content: flex-end;
+    }
+
+    .origin {
+        grid-area: five;
+        align-self: end;
+    }
+
+    .next-train-time {
+        grid-area: six;
+        align-self: end;
+        text-align: end;
+    }
+
+    .card-bottom-right {
+        grid-area: seven / seven / eight / eight;
+        align-self: end;
+    }
+
+    .train-route p {
+        padding: 0.75em 0;
+        margin-top: 0.5em;
+    }
+
+    .change-journey-button {
+        width: 100%;
+    }
+
+    .change-journey-button button {
+        margin-top: 1em;
+        width: 96.9%;
+        display: block;
+    }
+
+
 
 }
 
@@ -143,6 +186,10 @@ body {
         position: absolute;
         bottom: 0;
 
+    }
+
+    .change-journey-button {
+        padding-top: 1em;
     }
 }
 
