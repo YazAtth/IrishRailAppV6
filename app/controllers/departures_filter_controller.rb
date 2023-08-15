@@ -21,7 +21,15 @@ class DeparturesFilterController < ApplicationController
     session[:origin_station] = origin_station
     session[:destination_station] = destination_station
 
-    p origin_station
+    # p origin_station
+
+    redirect_to departures_page_path
+  end
+
+
+  def set_journey
+    session[:origin_station] = params[:origin_station]
+    session[:destination_station] = params[:destination_station]
 
     redirect_to departures_page_path
   end

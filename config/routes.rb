@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get "departures-filter", to: "departures_filter#index", as: :departures_filter_page
   post "departures-filter", to: "departures_filter#search", as: :departures_filter_search
+  get "set-journey", to: "departures_filter#set_journey", as: :departures_filter_set_journey
+
 
   get "train-route", to: "train_route#index", as: :train_route_page
 

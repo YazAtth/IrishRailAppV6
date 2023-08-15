@@ -1,0 +1,43 @@
+
+
+/* Medium to large screens */
+@media only screen and (min-width: 640px) {
+
+    .departure-filters-page {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "left right";
+    }
+    .filters-card {
+        grid-area: left;
+        margin: 0.5em;
+    }
+
+    .suggested-journeys {
+        /*margin: 0.5em;*/
+    }
+
+    .suggested-journeys > h1 {
+        text-align: center;
+        padding-bottom: 0.5em;
+    }
+
+    .suggested-route-card {
+        margin: 1em 0.5em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "top-left top-right";
+    }
+
+    .suggested-route-origin {
+        grid-area: top-left;
+    }
+
+    .suggested-route-destination {
+        grid-area: top-right;
+        justify-self: end;
+    }
+
+
+}

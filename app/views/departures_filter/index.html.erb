@@ -3,21 +3,37 @@
   <%= render partial: "shared/navbar", locals: {current_page: "departures"} %>
 
 
-  <%= form_tag departures_filter_search_path, method: :post do %>
-    <%= label_tag :origin_station, 'Origin Station:' %>
-    <%= select_tag :origin_station, options_for_select(@station_names, "Dublin Connolly") %>>
-    <br>
+  <div class="departure-filters-page">
 
-    <%= label_tag :destination_station, 'Destination Station:' %>
-    <% destination_station_names = ["All"] + @station_names %>
-    <%# destination_station_names.append("All") %>
-    <%= select_tag :destination_station, options_for_select(destination_station_names, "Howth Junction") %>
-    <br>
+    <div class="filters-card bg-gray-200">
+      <%= form_tag departures_filter_search_path, method: :post do %>
+        <%= label_tag :origin_station, 'Origin Station:' %>
+        <%= select_tag :origin_station, options_for_select(@station_names, "Dublin Connolly") %>>
+        <br>
 
-    <%= submit_tag 'Search', class: "bg-blue-500 cursor-pointer" %>
-  <% end %>
+        <%= label_tag :destination_station, 'Destination Station:' %>
+        <% destination_station_names = ["All"] + @station_names %>
+        <%# destination_station_names.append("All") %>
+        <%= select_tag :destination_station, options_for_select(destination_station_names, "Howth Junction") %>
+        <br>
 
+        <%= submit_tag 'Search', class: "bg-blue-500 cursor-pointer" %>
+      <% end %>
+    </div>
 
-<!--  <pre><%#= JSON.pretty_generate(@response) %></pre>-->
+    <div class="suggested-journeys">
+      <h1 class="text-4xl font-bold text-gray-700">Suggested Journeys</h1>
+
+      <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Connolly", destination_station: "Howth Junction") do %>
+        <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Connolly", destination_station: "Howth Junction"} %>
+      <% end %>
+
+      <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Connolly", destination_station: "Maynooth") do %>
+        <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Connolly", destination_station: "Maynooth"} %>
+      <% end %>
+
+    </div>
+  </div>
+
 
 </div>
