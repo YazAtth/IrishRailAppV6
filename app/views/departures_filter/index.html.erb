@@ -11,7 +11,7 @@
     <%= label_tag :destination_station, 'Destination Station:' %>
     <% destination_station_names = ["All"] + @station_names %>
     <%# destination_station_names.append("All") %>
-    <%= select_tag :destination_station, options_for_select(destination_station_names, "All") %>
+    <%= select_tag :destination_station, options_for_select(destination_station_names, "Howth Junction") %>
     <br>
 
     <%= submit_tag 'Search', class: "bg-blue-500 cursor-pointer" %>
