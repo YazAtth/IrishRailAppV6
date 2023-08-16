@@ -1,6 +1,10 @@
 
 <!--<pre><%#= @response_pretty %></pre>-->
 
+<% content_for :head do %>
+  <% stylesheet_link_tag "navbar", "departures" %>
+<% end %>
+
 <div class="container">
 
   <%= render partial: "shared/navbar", locals: {current_page: "departures"} %>
