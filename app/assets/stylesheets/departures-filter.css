@@ -1,5 +1,22 @@
 
 
+
+
+@media only screen and (max-width: 639px) {
+
+
+
+
+    /*body * {*/
+    /*    border: 1px solid red;*/
+    /*}*/
+
+    /*.departure-filters-page {*/
+    /*    color: red;*/
+    /*}*/
+}
+
+
 /* Medium to large screens */
 @media only screen and (min-width: 640px) {
 
@@ -10,8 +27,37 @@
     }
     .filters-card {
         grid-area: left;
-        margin: 0.5em;
+        /*margin: 0.5em 0.5em 0 0.5em;*/
+        padding: 1em 0 2em 0;
     }
+
+    .filters-card-form {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "top-left top-right"
+        "middle-left middle-right"
+        "bottom-left bottom-right";
+
+        /*margin: 1em;*/
+        margin: 1em 1em 0 1em;
+    }
+
+    .filters-card-form > *:not(input)  {
+        margin-bottom: 1em;
+    }
+
+    .filters-card-form > label {
+        height: 2em;
+    }
+
+    .filters-card-form > input {
+        height: 3em;
+        /*cursor: pointer;*/
+    }
+
+
 
     .suggested-journeys {
         /*margin: 0.5em;*/
@@ -38,6 +84,37 @@
         grid-area: top-right;
         justify-self: end;
     }
+
+    /*.select-tag {*/
+    /*    height: 2em;*/
+    /*}*/
+
+    /*.filter-tag {*/
+    /*    margin: 1em;*/
+    /*}*/
+
+
+    #origin-station-label {
+        grid-area: top-left;
+    }
+
+    #origin-station-select {
+        grid-area: top-right;
+    }
+
+    #destination-station-label {
+        grid-area: middle-left;
+    }
+
+    #destination-station-select {
+        grid-area: middle-right;
+    }
+
+    #station-filter-submit {
+        grid-area: bottom-left / bottom-left / bottom-right / bottom-right;
+        margin-top: 1em;
+    }
+
 
 
 }

@@ -28,9 +28,9 @@ body {
 /* Mobile Screens */
 @media only screen and (max-width: 639px) {
 
-    .body * {
-        /*border: 1px solid red;*/
-    }
+    /*body * {*/
+    /*    border: 1px solid red;*/
+    /*}*/
 
     .card {
         display: grid;

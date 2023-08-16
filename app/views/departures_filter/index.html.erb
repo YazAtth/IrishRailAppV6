@@ -5,20 +5,27 @@
 
   <div class="departure-filters-page">
 
-    <div class="filters-card bg-gray-200">
-      <%= form_tag departures_filter_search_path, method: :post do %>
-        <%= label_tag :origin_station, 'Origin Station:' %>
-        <%= select_tag :origin_station, options_for_select(@station_names, "Dublin Connolly") %>>
-        <br>
+    <div class="mr-1">
+      <div class="filters-card bg-gray-200 rounded-xl">
+        <%= form_tag departures_filter_search_path, method: :post, class: "filters-card-form" do %>
 
-        <%= label_tag :destination_station, 'Destination Station:' %>
-        <% destination_station_names = ["All"] + @station_names %>
-        <%# destination_station_names.append("All") %>
-        <%= select_tag :destination_station, options_for_select(destination_station_names, "Howth Junction") %>
-        <br>
+          <div class="flex items-center">
+            <%= label_tag :origin_station, 'Origin Station', id: "origin-station-label", class: ""%>
+          </div>
+          <%= select_tag :origin_station, options_for_select(@station_names, "Dublin Connolly"), class: "select-tag", id: "origin-station-select"%>
+  <!--        <br>-->
 
-        <%= submit_tag 'Search', class: "bg-blue-500 cursor-pointer" %>
-      <% end %>
+          <div class="flex items-center">
+            <%= label_tag :destination_station, 'Destination Station', id: "destination-station-label" %>
+          </div>
+          <% destination_station_names = ["All"] + @station_names %>
+          <%= select_tag :destination_station, options_for_select(destination_station_names, "All"), class: "select-tag", id: "destination-station-select"%>
+  <!--        <br>-->
+
+          <%= submit_tag 'Search', class: "bg-blue-500 cursor-pointer hover:bg-blue-600 text-white rounded-lg", id: "station-filter-submit" %>
+        <% end %>
+
+      </div>
     </div>
 
     <div class="suggested-journeys">
@@ -30,6 +37,10 @@
 
       <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Connolly", destination_station: "Maynooth") do %>
         <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Connolly", destination_station: "Maynooth"} %>
+      <% end %>
+
+      <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Heuston", destination_station: "Sallins") do %>
+        <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Heuston", destination_station: "Sallins"} %>
       <% end %>
 
     </div>
