@@ -1,0 +1,44 @@
+
+
+body {
+    background-color: #f4f4fb;
+}
+
+.train-route-card {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "train-route-card-left train-route-card-right";
+}
+
+.station_name {
+    grid-area: train-route-card-left;
+}
+
+.arrival_time {
+    grid-area: train-route-card-right;
+    justify-self: end;
+}
+
+/* Mobile Screens */
+@media only screen and (max-width: 650px) {
+
+    .button-to-departures {
+        padding: 1em;
+        margin: 0 0.5em;
+        text-align: center;
+    }
+
+
+
+}
+
+/* Medium to larger screens */
+@media only screen and (min-width: 650px) {
+
+
+    .button-to-departures {
+        display: inline;
+        padding: 1em;
+        margin-left: 0.5em;
+    }
+}

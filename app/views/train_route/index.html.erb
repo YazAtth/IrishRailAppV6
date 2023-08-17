@@ -1,10 +1,42 @@
+<% content_for :head do %>
+  <% stylesheet_link_tag "navbar", "train-route" %>
+<% end %>
+
+
 <div class="container">
 
   <%= render partial: "shared/navbar", locals: {current_page: "departures"} %>
 
-  <% @train_route.each do |stop| %>
-    <p><%= stop["LocationFullName"]%></p>
-  <% end %>
+  <div class="mb-10 mt-5">
+    <%= link_to departures_page_path do %>
+      <p class="button-to-departures bg-gray-200 rounded-sm hover:bg-gray-400 cursor-pointer">Back to Departures</p>
+    <% end %>
+  </div>
+
+  <div class="route-list">
+
+    <% @train_route.each do |stop| %>
+      <% arrival_time =  stop["ScheduledArrival"]
+        .split(":")
+        .slice(0, 2)
+        .join(":") %>
+
+      <% station_name =  stop["LocationFullName"]%>
+
+      <% if station_name.nil? %>
+        <% next %>
+      <% end %>
+
+      <%= render partial: "train_route/train_route_card", locals: {station_name: station_name, arrival_time: arrival_time} %>
+
+
+<!--      <p><%#= arrival_time %> - <%#= station_name %></p>-->
+
+    <% end %>
+
+  </div>
+
+<!--  <pre><%#= JSON.pretty_generate(@train_route) %></pre>-->
 
 
 </div>
