@@ -48,6 +48,10 @@
         <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Heuston", destination_station: "Sallins"} %>
       <% end %>
 
+      <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Heuston", destination_station: "Cork") do %>
+        <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Heuston", destination_station: "Cork"} %>
+      <% end %>
+
     </div>
   </div>
 
