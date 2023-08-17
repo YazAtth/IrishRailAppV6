@@ -11,7 +11,7 @@ background-color: #f4f4fb;
 
 
 /* Mobile Screens */
-@media only screen and (max-width: 639px) {
+@media only screen and (max-width: 650px) {
 
 /*body * {*/
 /*    border: 1px solid red;*/
@@ -82,7 +82,7 @@ display: block;
 }
 
 /* Medium to larger screens */
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 650px) {
 
 .card {
 display: grid;

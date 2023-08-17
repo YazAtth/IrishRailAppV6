@@ -1,30 +1,100 @@
 
-.navbar {
-    display: grid;
-    grid-template-columns: 5fr 2fr;
 
-    padding: 1em 1em 2em;
+/* Mobile screens */
+@media only screen and (max-width: 650px) {
+
+    .navbar {
+        display: grid;
+        margin: 2em 0;
+    }
+
+    .dropdown-hidden {
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas: "top-left top-right";
+
+    }
+
+    .dropdown-active {
+        grid-template-rows: 1fr 2fr;
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas:
+        "top-left top-right"
+        "bottom-left bottom-right";
+
+    }
+
+
+    .navbar-title {
+        grid-area: top-left;
+        /*margin-bottom: 9em;*/
+    }
+
+    .hamburger-button {
+        grid-area: top-right;
+        justify-self: end;
+    }
+
+    .navbar-items {
+        grid-area: bottom-left / bottom-left / bottom-right / bottom-right;
+        background-color: white;
+        padding: 1em;
+        border-radius: 0.5em;
+    }
+
+
+    .navbar-divider {
+        display: none;
+    }
+
+
+
+    .dropdown-hidden .navbar-items {
+        display: none;
+    }
 }
 
-.navbar * {
-    /*border: 1px solid red;*/
+
+/* Medium to large screens */
+@media only screen and (min-width: 650px) {
+    .navbar {
+        display: grid;
+        grid-template-columns: 5fr 2fr;
+
+        padding: 1em 1em 2em;
+    }
+
+    .navbar * {
+        /*border: 1px solid red;*/
+    }
+
+    .navbar-title {
+        padding: 0.5em;
+    }
+
+    .navbar-items {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        align-items: center; /* Vertical navbar item centering */
+        gap: 1.5rem;
+
+    }
+
+    .navbar-items li {
+        justify-self: center; /* Horizontal navbar item centering */
+    }
+
+    .active-navbar-item {
+        color: #9696ff;
+    }
+
+    .hamburger-button {
+        display: none;
+    }
 }
 
-.navbar-items {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    align-items: center; /* Vertical navbar item centering */
-    gap: 1.5rem;
 
-}
 
-.navbar-items li {
-    justify-self: center; /* Horizontal navbar item centering */
-}
 
-.active-navbar-item {
-    color: #9696ff;
-}
 
 
 
