@@ -9,14 +9,25 @@
 
   <%= render partial: "shared/navbar", locals: {current_page: "departures"} %>
 
-  <p class="ml-5 text-gray-500">
-    Showing all departures from <i><%= session[:origin_station] %></i>
-    <%#= session[:destination_station] == "All" ?  "": "heading towards #{session[:destination_station]}"%>
-    <% if session[:destination_station] != "All" %>
-      heading towards <i><%= session[:destination_station] %></i>
-    <% end %>
-    in the next 90 minutes
-  </p>
+  <% if @no_trains %>
+    <p class="ml-5 text-gray-500">
+      No departures from <i><%= session[:origin_station] %></i>
+      <%#= session[:destination_station] == "All" ?  "": "heading towards #{session[:destination_station]}"%>
+      <% if session[:destination_station] != "All" %>
+        heading towards <i><%= session[:destination_station] %></i>
+      <% end %>
+      in the next 90 minutes.
+    </p>
+  <% else %>
+    <p class="ml-5 text-gray-500">
+      Showing all departures from <i><%= session[:origin_station] %></i>
+      <%#= session[:destination_station] == "All" ?  "": "heading towards #{session[:destination_station]}"%>
+      <% if session[:destination_station] != "All" %>
+        heading towards <i><%= session[:destination_station] %></i>
+      <% end %>
+      in the next 90 minutes.
+    </p>
+  <% end %>
 
   <div class="change-journey-button">
     <%= button_to departures_filter_search_path do %>
@@ -24,19 +35,21 @@
     <% end %>
   </div>
 
-  <% @train_departures.each_with_index do |departure, index| %>
+  <% unless @no_trains %>
+    <% @train_departures.each_with_index do |departure, index| %>
 
-    <% if index != @train_departures.length-1 %>
-      <% next_departure = @train_departures[index+1] %>
+    <%  if index != @train_departures.length-1  %>
+      <% next_departure = @train_departures[index + 1] %>
     <% else %>
-      <% next_departure = nil %>
+    <%  next_departure = nil  %>
     <% end %>
 
-    <%= render partial: "shared/card", locals: {
-      departure: departure,
-      next_departure: next_departure
-    } %>
-  <% end %>
+    <%=  render partial: "shared/card", locals: {
+          departure: departure,
+          next_departure: next_departure
+        }  %>
+    <%  end  %>
+  <%  end %>
 
 <!--  <pre><%#= @response_pretty %></pre>-->
 

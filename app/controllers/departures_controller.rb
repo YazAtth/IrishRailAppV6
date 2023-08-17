@@ -18,6 +18,13 @@ class DeparturesController < ApplicationController
 
     @train_route = request_departures(departures_api_endpoint_uri)
     all_train_departures = @train_route["body"]
+
+    # Checks if there are no trains
+    if all_train_departures.nil?
+      @no_trains = true
+      return
+    end
+
     @train_departures = []
 
 
