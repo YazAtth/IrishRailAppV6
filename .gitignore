@@ -35,3 +35,8 @@
 /config/master.key
 
 .idea
+
+# Ended up not being used but it's still in the directory
+server.csr
+server.key
+server.pass.key
