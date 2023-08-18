@@ -52,9 +52,65 @@ body {
 
 
 
+
+.footer-divider {
+    height:1px;
+    border-width:0;
+    color:gray;
+    background-color: #bbbbbb;
+    margin: 1em;
+}
+
+
+.footer-link {
+    color: var(--professional-green)
+}
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+
 /* Mobile Screens */
 @media only screen and (max-width: 650px) {
 
+    main {
+        min-height: 100vh;
+    }
+
+    footer {
+        min-height: 8em;
+        background-color: var(--footer-gray);
+        margin-top: 2em;
+        padding: 1em;
+    }
+
+    .footer-left {
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
+
+    .footer-right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-link {
+        margin: 0.5em 0;
+    }
+
+    .footer-column {
+        margin: 0 1em;
+    }
+
+    .footer-bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 1em;
+    }
+
+    .github-link {
+        justify-self: end;
+    }
 }
 
 
@@ -101,13 +157,6 @@ body {
     }
 
 
-    .footer-divider {
-        height:1px;
-        border-width:0;
-        color:gray;
-        background-color: #bbbbbb;
-        margin: 1em;
-    }
 
     .footer-bottom {
         display: grid;
@@ -122,11 +171,5 @@ body {
     }
 
 
-    .footer-link {
-        color: var(--professional-green)
-    }
 
-    .footer-link:hover {
-        text-decoration: underline;
-    }
 }
