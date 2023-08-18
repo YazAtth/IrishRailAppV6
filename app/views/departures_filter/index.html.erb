@@ -17,12 +17,13 @@
           <div class="flex items-center">
             <%= label_tag :origin_station, 'Origin Station', id: "origin-station-label", class: ""%>
           </div>
+
           <%= select_tag :origin_station, options_for_select(@station_names, "Dublin Connolly"), class: "select-tag", id: "origin-station-select"%>
-<!--          <br>-->
 
           <div class="flex items-center">
             <%= label_tag :destination_station, 'Destination Station', id: "destination-station-label" %>
           </div>
+
           <% destination_station_names = ["All"] + @station_names %>
           <%= select_tag :destination_station, options_for_select(destination_station_names, "All"), class: "select-tag", id: "destination-station-select"%>
           <br>

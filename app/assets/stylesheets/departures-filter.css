@@ -14,7 +14,7 @@ body {
     background-color: var(--dark-green);
 }
 
-
+/* Mobile Screens */
 @media only screen and (max-width: 650px) {
 
     /*body {*/
@@ -64,6 +64,22 @@ body {
 
     .suggested-route-destination {
         grid-area: right;
+    }
+
+    #origin-station-select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 0 1em;
+        background: white url(icons8-dropdown-50.png) no-repeat calc(100% - 0.5rem) center;
+        background-size: 2rem auto, 100%;
+    }
+
+    #destination-station-select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 0 1em;
+        background: white url(icons8-dropdown-50.png) no-repeat calc(100% - 0.5rem) center;
+        background-size: 2rem auto, 100%;
     }
 
 
@@ -161,6 +177,12 @@ body {
 
     #origin-station-select {
         grid-area: top-right;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 0 1em;
+        background: white url(icons8-dropdown-50.png) no-repeat calc(100% - 0.5rem) center;
+        background-size: 2rem auto, 100%;
     }
 
     #destination-station-label {
@@ -169,6 +191,12 @@ body {
 
     #destination-station-select {
         grid-area: middle-right;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 0 1em;
+        background: white url(icons8-dropdown-50.png) no-repeat calc(100% - 0.5rem) center;
+        background-size: 2rem auto, 100%;
     }
 
     #station-filter-submit {
