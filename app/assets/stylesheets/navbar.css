@@ -90,6 +90,15 @@
     .hamburger-button {
         display: none;
     }
+
+    .footer-left {
+        justify-self: start;
+    }
+
+    .footer-left img {
+        margin-top: 0.5em;
+        min-width: 6em;
+    }
 }
 
 
