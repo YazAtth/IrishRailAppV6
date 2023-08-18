@@ -13,19 +13,19 @@
 
   <ul class="navbar-items text-lg">
 
-    <li class="<%= current_page == "home" ? "text-black" : "text-gray-500" %>">
+    <li class="<%= current_page == "home" ? "text-dark-green font-semibold" : "text-professional-green" %>">
       <%= link_to "Home", root_path %>
     </li>
     <li class="text-gray-400 navbar-divider">|</li>
-    <li class="<%= current_page == "departures" ? "text-black" : "text-gray-500" %>">
+    <li class="<%= current_page == "departures" ? "text-dark-green font-semibold" : "text-professional-green" %>">
       <%= link_to "Departures", departures_page_path %>
     </li>
     <li class="text-gray-400 navbar-divider">|</li>
-    <li class="<%= current_page == "about" ? "text-black" : "text-gray-500" %>">
+    <li class="<%= current_page == "about" ? "text-dark-green font-semibold" : "text-professional-green" %>">
       <%= link_to "About", about_page_path %>
     </li>
     <li class="text-gray-400 navbar-divider">|</li>
-    <li class="<%= current_page == "login" ? "text-black" : "text-gray-500" %>">
+    <li class="<%= current_page == "login" ? "text-dark-green font-semibold" : "text-professional-green" %>">
 
       <% if user_signed_in? %>
         <%= button_to "Logout", destroy_user_session_path, method: :delete %>

@@ -5,13 +5,51 @@
     --slate-400: #94a3b8;
     --footer-gray: #e4e8ef;
 
-    /*--professional-green: #007849;*/
+    /*--dark-green: #007849;*/
+    --dark-green: #196719;
     --professional-green: #228B22;
 }
 
 body {
     background-color: #f4f4fb;
 }
+
+.text-professional-green {
+    color: var(--professional-green);
+}
+
+
+.green-link {
+    color: var(--professional-green)
+}
+.green-link:hover {
+    text-decoration: underline;
+}
+
+.text-dark-green {
+    color: var(--dark-green);
+}
+
+.bg-professional-green {
+    background-color: var(--professional-green);
+}
+
+.bg-dark-green-hover:hover {
+    background-color: var(--dark-green);
+}
+
+
+.green-button {
+    background-color:  var(--professional-green);
+    border-radius: 0.5rem;
+    color: white;
+}
+
+.green-button:hover {
+    background-color: var(--dark-green);
+}
+
+
 
 
 /* Mobile Screens */

@@ -2,7 +2,7 @@
 <!--<pre><%#= @response_pretty %></pre>-->
 
 <% content_for :head do %>
-  <% stylesheet_link_tag "navbar", "departures" %>
+  <% stylesheet_link_tag "default-style", "navbar", "departures" %>
 <% end %>
 
 <div class="container">
@@ -31,7 +31,7 @@
 
   <div class="change-journey-button">
     <%= button_to departures_filter_search_path do %>
-      <p class="ml-5 mb-4 p-2 bg-gray-200 rounded-sm hover:bg-gray-400 cursor-pointer">Change Journey</p>
+      <p class="ml-5 mb-4 p-2 green-button rounded-sm  cursor-pointer">Change Journey</p>
     <% end %>
   </div>
 
