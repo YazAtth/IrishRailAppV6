@@ -104,6 +104,7 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "left right";
+        min-height: 70vh;
     }
     .filters-card {
         grid-area: left;
