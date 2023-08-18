@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
-  root "home#index"
+  root "departures_filter#index"
 
   get "about", to: "about#index", as: "about_page"
   get "departures", to:"departures#index", as: "departures_page"

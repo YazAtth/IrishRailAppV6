@@ -68,7 +68,9 @@ margin-top: 0.5em;
 }
 
 .change-journey-button {
-width: 100%;
+    width: 100%;
+    text-align: center;
+    margin: 1em 0;
 }
 
 .change-journey-button button {
@@ -174,6 +176,11 @@ bottom: 0;
 }
 
 .change-journey-button {
-padding-top: 1em;
+    padding-top: 1em;
+    width: 10em;
+    text-align: center;
 }
+
+
+
 }

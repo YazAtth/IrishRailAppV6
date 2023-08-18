@@ -18,7 +18,9 @@
       <% end %>
       in the next 90 minutes.
     </p>
-  <% else %>
+  <% elsif !@journey_supplied %>
+    <p class="ml-5 text-gray-500">No journey supplied. Set a starting station and destination station to see departures.</p>
+<% else %>
     <p class="ml-5 text-gray-500">
       Showing all departures from <i><%= session[:origin_station] %></i>
       <%#= session[:destination_station] == "All" ?  "": "heading towards #{session[:destination_station]}"%>
@@ -30,15 +32,19 @@
   <% end %>
 
   <div class="change-journey-button">
-    <%= button_to departures_filter_search_path do %>
-      <p class="ml-5 mb-1 p-2 green-button rounded-md cursor-pointer">Change Journey</p>
+    <%= link_to departures_filter_page_path do %>
+      <% if @journey_supplied %>
+        <p class="ml-5 mb-1 p-2 green-button rounded-md cursor-pointer">Change Journey</p>
+      <% else %>
+        <p class="ml-5 mb-1 p-2 green-button rounded-md cursor-pointer">Set Journey</p>
+  <% end %>
     <% end %>
   </div>
 
   <hr class="footer-divider">
 
   <div style="margin-top: 2em">
-    <% unless @no_trains %>
+    <% unless @no_trains || !@journey_supplied %>
       <% @train_departures.each_with_index do |departure, index| %>
 
       <%  if index != @train_departures.length-1  %>

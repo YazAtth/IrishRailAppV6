@@ -9,9 +9,13 @@ class DeparturesController < ApplicationController
   def index
 
     if session[:origin_station].nil? || session[:destination_station].nil?
-      redirect_to departures_filter_page_path
+      # redirect_to departures_filter_page_path
+
+      @journey_supplied = false
       return
     end
+
+    @journey_supplied = true
 
     origin_station = session[:origin_station]
     departures_api_endpoint_uri = "http://api.irishrail.ie/realtime/realtime.asmx/getStationDataByNameXML?StationDesc=#{origin_station}"
