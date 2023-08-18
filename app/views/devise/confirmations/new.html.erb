@@ -15,8 +15,13 @@
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "w-full text-lg" %>
+          <div class="mb-2 mt-4">
+            <%= f.label :email %>
+          </div>
+
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                            value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
+                            class: "w-full text-lg", style: "height: 2em;"%>
         </div>
 
         <div class="actions flex justify-center items-center p-4 mt-7 mb-4 cursor-pointer green-button text-lg">

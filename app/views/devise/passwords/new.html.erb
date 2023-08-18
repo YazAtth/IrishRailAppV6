@@ -16,8 +16,10 @@
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full text-lg" %>
+          <div class="mb-2 mt-4">
+            <%= f.label :email %>
+          </div>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full text-lg", style: "height: 2em;" %>
         </div>
 
         <div class="actions flex justify-center items-center p-4 mt-7 mb-7 bg-gray-300 hover:bg-gray-400 cursor-pointer">

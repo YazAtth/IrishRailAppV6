@@ -15,21 +15,27 @@
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full text-lg" %>
+          <div class="mb-2 mt-4">
+            <%= f.label :email %>
+          </div>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full text-lg", style: "height:2em;" %>
         </div>
 
         <div class="field">
-          <%= f.label :password %>
-          <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password", class: "w-full text-lg" %>
+          <div class="mb-2 mt-4">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %>
+          </div>
+          <%= f.password_field :password, autocomplete: "new-password", class: "w-full text-lg", style: "height:2em;" %>
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full text-lg" %>
+          <div class="mb-2 mt-4">
+            <%= f.label :password_confirmation %>
+          </div>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full text-lg", style: "height:2em;" %>
         </div>
 
         <div class="actions flex justify-center items-center p-4 mt-7 mb-3 cursor-pointer green-button text-white">
