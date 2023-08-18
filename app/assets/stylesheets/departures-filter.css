@@ -6,6 +6,10 @@ body {
 }
 
 
+#station-filter-submit {
+    background-color: var(--professional-green);
+}
+
 
 @media only screen and (max-width: 650px) {
 

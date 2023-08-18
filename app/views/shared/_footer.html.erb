@@ -1,0 +1,38 @@
+
+
+<footer class="">
+  <div class="footer-main-content">
+    <div class="footer-left">
+      <h1 class="text-3xl font-semibold">IrishRailApp</h1>
+    </div>
+    <div class="footer-right">
+      <div>
+        <h2 class="text-md font-bold">RESOURCES</h2>
+        <div class="footer-link"><%= link_to "Irish Rail API", "http://api.irishrail.ie/realtime/"%></div>
+        <div class="footer-link"><%= link_to "pgAdmin", "https://www.pgadmin.org/"%></div>
+        <div class="footer-link"><%= link_to "RubyMine", "https://www.pgadmin.org/"%></div>
+      </div>
+
+      <div>
+        <h2 class="text-md font-bold">MADE USING</h2>
+        <div class="footer-link"><%= link_to "Ruby on Rails", "https://rubyonrails.org/" %></div>
+        <div class="footer-link"><%= link_to "Heroku", "https://www.heroku.com/" %></div>
+        <div class="footer-link"><%= link_to "Omniauth", "https://github.com/omniauth/omniauth" %></div>
+        <div class="footer-link"><%= link_to "Devise", "https://github.com/heartcombo/devise" %></div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="footer-divider">
+
+  <div class="footer-bottom">
+    <p class="flex items-center">© 2023 IrishRailApp. All Rights Reserved.</p>
+    <div class="github-link">
+      <%= link_to "https://www.github.com" do %>
+        <%= image_tag("github-logo.png", style: "max-width: 1.5em;") %>
+      <% end %>
+    </div>
+  </div>
+
+</footer>

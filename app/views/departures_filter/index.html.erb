@@ -1,6 +1,6 @@
 
 <% content_for :head do %>
-  <% stylesheet_link_tag "navbar", "departures-filter", "data-turbo-track": "reload" %>
+  <% stylesheet_link_tag  "default-style", "navbar", "departures-filter", "data-turbo-track": "reload" %>
 <% end %>
 
 <div class="container">
@@ -27,7 +27,7 @@
           <%= select_tag :destination_station, options_for_select(destination_station_names, "All"), class: "select-tag", id: "destination-station-select"%>
           <br>
 
-          <%= submit_tag 'Search', class: "bg-blue-500 cursor-pointer hover:bg-blue-600 text-white rounded-lg", id: "station-filter-submit" %>
+          <%= submit_tag 'Search', class: "cursor-pointer text-white rounded-lg", id: "station-filter-submit" %>
         <% end %>
 
       </div>
