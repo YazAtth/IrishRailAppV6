@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IrishRailAppV6</title>
+    <title>
+      Irish Rail App <%= content_for?(:page_title) ? " | " + yield(:page_title) : "" %>
+    </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="https://cdn.tailwindcss.com"></script>
 

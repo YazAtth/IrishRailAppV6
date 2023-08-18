@@ -2,6 +2,10 @@
   <% stylesheet_link_tag "navbar", "default-style" %>
 <% end %>
 
+<% content_for :page_title do %>
+  Login
+<% end %>
+
 <div class="container">
 
   <%= render partial: "shared/navbar", locals: {current_page: "login"} %>

@@ -3,6 +3,10 @@
   <% stylesheet_link_tag  "default-style", "navbar", "departures-filter", "data-turbo-track": "reload" %>
 <% end %>
 
+<% content_for :page_title do %>
+  Home
+<% end %>
+
 <div class="container">
 
   <%= render partial: "shared/navbar", locals: {current_page: "home"} %>
