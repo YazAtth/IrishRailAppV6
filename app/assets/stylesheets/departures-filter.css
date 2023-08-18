@@ -179,6 +179,7 @@ body {
 
     #origin-station-label {
         grid-area: top-left;
+        margin-right: 1em;
     }
 
     #origin-station-select {
@@ -193,6 +194,7 @@ body {
 
     #destination-station-label {
         grid-area: middle-left;
+        margin-right: 1em;
     }
 
     #destination-station-select {
