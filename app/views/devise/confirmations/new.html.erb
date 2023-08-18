@@ -9,7 +9,7 @@
 
     <div>
 
-      <h2 class="text-4xl font-bold flex justify-center items-center pb-5 text-gray-700">Resend Confirmation Email</h2>
+      <h2 class="text-4xl font-bold flex justify-center items-center pb-5 text-gray-700" style="max-width: 25rem;">Resend Confirmation Email</h2>
 
       <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
@@ -21,10 +21,10 @@
 
           <%= f.email_field :email, autofocus: true, autocomplete: "email",
                             value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
-                            class: "w-full text-lg", style: "height: 2em;"%>
+                            class: "text-lg", style: "height: 2em; width: 25rem;"%>
         </div>
 
-        <div class="actions flex justify-center items-center p-4 mt-7 mb-4 cursor-pointer green-button text-lg">
+        <div class="actions flex justify-center items-center p-4 mt-7 mb-4 cursor-pointer green-button text-lg" style="width: 25rem;">
           <%= f.submit "Resend confirmation instructions" %>
         </div>
       <% end %>

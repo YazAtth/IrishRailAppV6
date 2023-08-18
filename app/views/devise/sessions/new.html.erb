@@ -10,7 +10,6 @@
     <div>
       <h2 class="text-5xl font-bold flex justify-center items-center pb-5 text-gray-700">Log in</h2>
 
-
       <%= render "devise/shared/flash_message" %>
 
 
@@ -19,14 +18,14 @@
           <div class="mb-2">
             <%= f.label :email %>
           </div>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full text-lg", style: "height:2em;" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "text-lg", style: "height:2em; width:25rem;" %>
         </div>
 
         <div class="field">
           <div class="mb-2 mt-4">
             <%= f.label :password %>
           </div>
-          <%= f.password_field :password, autocomplete: "current-password", class: "w-full text-lg", style: "height:2em;"%>
+          <%= f.password_field :password, autocomplete: "current-password", class: "text-lg", style: "height:2em; width:25rem;"%>
         </div>
 
         <% if devise_mapping.rememberable? %>

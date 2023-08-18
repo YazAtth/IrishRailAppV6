@@ -10,7 +10,7 @@
 
     <div>
 
-      <h2 class="text-5xl font-bold flex justify-center items-center pb-5 text-gray-700">Password Reset</h2>
+      <h2 class="text-5xl font-bold flex justify-center items-center pb-5 text-gray-700" style="max-width: 25rem;">Password Reset</h2>
 
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
@@ -19,10 +19,10 @@
           <div class="mb-2 mt-4">
             <%= f.label :email %>
           </div>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full text-lg", style: "height: 2em;" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full text-lg", style: "height: 2em; width: 25rem;" %>
         </div>
 
-        <div class="actions flex justify-center items-center p-4 mt-7 mb-7 bg-gray-300 hover:bg-gray-400 cursor-pointer">
+        <div class="actions flex justify-center items-center p-4 mt-7 mb-4 cursor-pointer green-button">
           <%= f.submit "Send me reset password instructions", class: "cursor-pointer"%>
         </div>
       <% end %>
