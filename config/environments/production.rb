@@ -5,14 +5,14 @@ Rails.application.configure do
 
   # Devise section
   config.action_mailer.default_url_options = {
-    host: 'https://irish-rail-app-v6-65393ddc6999.herokuapp.com',
+    host: 'https://www.irishrailapp.com',
   }
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
     :user_name => 'apikey', # This is the string literal 'apikey', NOT the ID of your API key
     :password => ENV["SENDGRID_API_KEY"], # This is the secret sendgrid API key which was issued during API key creation
-    :domain => 'login-confirmation-email-a0bd9a7cc59f.herokuapp.com',
+    :domain => 'www.irishrailapp.com',
     :address => 'smtp.sendgrid.net',
     :port => 587,
     # :port => 2525,
