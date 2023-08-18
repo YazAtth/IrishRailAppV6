@@ -31,25 +31,31 @@
 
   <div class="change-journey-button">
     <%= button_to departures_filter_search_path do %>
-      <p class="ml-5 mb-4 p-2 green-button rounded-sm  cursor-pointer">Change Journey</p>
+      <p class="ml-5 mb-1 p-2 green-button rounded-md cursor-pointer">Change Journey</p>
     <% end %>
   </div>
 
-  <% unless @no_trains %>
-    <% @train_departures.each_with_index do |departure, index| %>
+  <hr class="footer-divider">
 
-    <%  if index != @train_departures.length-1  %>
-      <% next_departure = @train_departures[index + 1] %>
-    <% else %>
-    <%  next_departure = nil  %>
-    <% end %>
+  <div style="margin-top: 2em">
+    <% unless @no_trains %>
+      <% @train_departures.each_with_index do |departure, index| %>
 
-    <%=  render partial: "shared/card", locals: {
-          departure: departure,
-          next_departure: next_departure
-        }  %>
-    <%  end  %>
-  <%  end %>
+      <%  if index != @train_departures.length-1  %>
+        <% next_departure = @train_departures[index + 1] %>
+      <% else %>
+      <%  next_departure = nil  %>
+      <% end %>
+
+      <%=  render partial: "shared/card", locals: {
+            departure: departure,
+            next_departure: next_departure
+          }  %>
+      <%  end  %>
+
+      <p class="text-gray-500" style="text-align: center; margin: 3em;">No more departures within the next 90 minutes...</p>
+    <%  end %>
+  </div>
 
 <!--  <pre><%#= @response_pretty %></pre>-->
 
