@@ -72,6 +72,8 @@ body {
         padding: 0 1em;
         background: white url(icons8-dropdown-50.png) no-repeat calc(100% - 0.5rem) center;
         background-size: 2rem auto, 100%;
+
+        border-radius: 0.5em;
     }
 
     #destination-station-select {
@@ -80,6 +82,9 @@ body {
         padding: 0 1em;
         background: white url(icons8-dropdown-50.png) no-repeat calc(100% - 0.5rem) center;
         background-size: 2rem auto, 100%;
+
+        border-radius: 0.5em;
+
     }
 
 
