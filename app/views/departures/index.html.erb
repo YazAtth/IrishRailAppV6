@@ -35,15 +35,33 @@
     </p>
   <% end %>
 
-  <div class="change-journey-button">
-    <%= link_to departures_filter_page_path do %>
-      <% if @journey_supplied %>
-        <p class="ml-5 mb-1 p-2 green-button rounded-md cursor-pointer">Change Journey</p>
+  <div class="departures-page-buttons">
+
+    <div class="change-journey-button">
+      <%= link_to departures_filter_page_path do %>
+        <% if @journey_supplied %>
+          <p class="ml-5 mb-1 p-2 green-button rounded-md cursor-pointer">Change Journey</p>
+        <% else %>
+          <p class="ml-5 mb-1 p-2 green-button rounded-md cursor-pointer">Set Journey</p>
+        <% end %>
+      <% end %>
+    </div>
+
+    <% if user_signed_in? %>
+      <div class="save-journey-button">
+        <%= button_to departures_save_journey_path, method: :post do %>
+
+          <% if @is_journey_saved %>
+            <p class="ml-5 mb-1 p-2 green-button rounded-md cursor-pointer">Remove Saved Journey</p>
       <% else %>
-        <p class="ml-5 mb-1 p-2 green-button rounded-md cursor-pointer">Set Journey</p>
-  <% end %>
+            <p class="ml-5 mb-1 p-2 green-button rounded-md cursor-pointer">Save Journey</p>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
+
   </div>
+
 
   <hr class="footer-divider">
 

@@ -11,6 +11,10 @@ class DeparturesFilterController < ApplicationController
       @station_names.append(station["StationDesc"])
     end
 
+    if user_signed_in?
+      @saved_journeys = current_user.saved_journeys
+    end
+
 
   end
 
