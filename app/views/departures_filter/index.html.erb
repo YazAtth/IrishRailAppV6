@@ -40,26 +40,27 @@
 
     <div class="suggested-journeys">
 
-      <div class="mb-5">
+      <% if user_signed_in? && @saved_journeys.length > 0 %>
+        <div class="saved-journeys mb-8">
 
-        <div class="flex justify-center">
-          <h1 class="text-4xl font-bold text-gray-700 mb-2">Saved Journeys</h1>
+          <div class="flex justify-center">
+            <h1 class="text-4xl font-bold text-gray-700 mb-2">Saved Journeys</h1>
+          </div>
+          <div class="flex justify-center">
+            <p class="text-gray-500">Click on the cards to see the departures</p>
+          </div>
+
+
+
+          <% @saved_journeys.each do |saved_journey| %>
+            <%= link_to departures_filter_set_journey_path(origin_station: saved_journey.origin_station, destination_station: saved_journey.destination_station) do %>
+              <%= render partial: "suggested-journey-card", locals: {origin_station: saved_journey.origin_station, destination_station: saved_journey.destination_station} %>
+            <% end %>
+          <% end %>
+
+          <hr class="footer-divider mt-9">
         </div>
-        <div class="flex justify-center">
-          <p class="text-gray-500">Click on the cards to see the departures</p>
-        </div>
-
-        <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Connolly", destination_station: "Howth Junction") do %>
-          <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Connolly", destination_station: "Howth Junction"} %>
-        <% end %>
-        <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Connolly", destination_station: "Howth Junction") do %>
-          <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Connolly", destination_station: "Howth Junction"} %>
-        <% end %>
-        <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Connolly", destination_station: "Howth Junction") do %>
-          <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Connolly", destination_station: "Howth Junction"} %>
-        <% end %>
-
-      </div>
+      <% end %>
 
       <div>
 
