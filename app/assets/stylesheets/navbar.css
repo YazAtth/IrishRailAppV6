@@ -8,37 +8,24 @@
         margin: 2em 0;
     }
 
-    .dropdown-hidden {
-        grid-template-columns: 3fr 1fr;
-        grid-template-areas: "top-left top-right";
-
+    .navbar-top {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
-    .dropdown-active {
-        grid-template-rows: 1fr 2fr;
-        grid-template-columns: 3fr 1fr;
-        grid-template-areas:
-        "top-left top-right"
-        "bottom-left bottom-right";
-
-    }
-
-
-    .navbar-title {
-        grid-area: top-left;
-        /*margin-bottom: 9em;*/
-    }
 
     .hamburger-button {
-        grid-area: top-right;
         justify-self: end;
+        display: flex;
     }
 
+
+
     .navbar-items {
-        grid-area: bottom-left / bottom-left / bottom-right / bottom-right;
         background-color: white;
         padding: 1em;
         border-radius: 0.5em;
+        margin-top: 2em;
     }
 
 
@@ -98,6 +85,14 @@
     .footer-left img {
         margin-top: 0.5em;
         min-width: 6em;
+    }
+
+    .navbar-item-unselected {
+        color: var(--professional-green)
+    }
+
+    .navbar-item-selected {
+        color: var(--dark-green)
     }
 }
 
