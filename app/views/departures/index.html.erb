@@ -5,6 +5,10 @@
   <% stylesheet_link_tag "default-style", "navbar", "departures" %>
 <% end %>
 
+<% content_for :page_title do %>
+  Departures
+<% end %>
+
 <div class="container">
 
   <%= render partial: "shared/navbar", locals: {current_page: "departures"} %>

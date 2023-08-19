@@ -1,31 +1,37 @@
 <div class="navbar dropdown-hidden" id="navbar">
 
-  <div class="navbar-title">
-    <h1 class="text-4xl font-semibold">IrishRailApp</h1>
-  </div>
+  <div class="navbar-top">
 
-  <div class="hamburger-button">
-    <%= button_tag type: 'button', onclick: "navbarToggle()", class: "" do %>
-      <%= image_tag("icons8-menu-48.png", class: "img-responsive", style: "max-width: 3em;") %>
+    <div class="navbar-title flex " style="max-width: 4rem;">
+      <%= image_tag("icons8-tracks-90.png") %>
+      <div class="flex items-center">
+        <h1 class="text-4xl font-semibold text-dark-green">IrishRailApp</h1>
+      </div>
+    </div>
 
-    <% end %>
+    <div class="hamburger-button">
+      <%= button_tag type: 'button', onclick: "navbarToggle()", class: "" do %>
+        <%= image_tag("icons8-menu-48.png", class: "img-responsive", style: "max-width: 3em;") %>
+      <% end %>
+    </div>
+
   </div>
 
   <ul class="navbar-items text-lg">
 
-    <li class="<%= current_page == "home" ? "text-dark-green font-semibold" : "text-professional-green" %>">
+    <li class="<%= current_page == "home" ? "navbar-item-selected font-semibold" : "navbar-item-unselected" %>">
       <%= link_to "Home", root_path %>
     </li>
     <li class="text-gray-400 navbar-divider">|</li>
-    <li class="<%= current_page == "departures" ? "text-dark-green font-semibold" : "text-professional-green" %>">
+    <li class="<%= current_page == "departures" ? "navbar-item-selected font-semibold" : "navbar-item-unselected" %>">
       <%= link_to "Departures", departures_page_path %>
     </li>
     <li class="text-gray-400 navbar-divider">|</li>
-    <li class="<%= current_page == "about" ? "text-dark-green font-semibold" : "text-professional-green" %>">
+    <li class="<%= current_page == "about" ? "navbar-item-selected font-semibold" : "navbar-item-unselected" %>">
       <%= link_to "About", about_page_path %>
     </li>
     <li class="text-gray-400 navbar-divider">|</li>
-    <li class="<%= current_page == "login" ? "text-dark-green font-semibold" : "text-professional-green" %>">
+    <li class="<%= current_page == "login" ? "navbar-item-selected font-semibold" : "navbar-item-unselected" %>">
 
       <% if user_signed_in? %>
         <%= button_to "Logout", destroy_user_session_path, method: :delete %>

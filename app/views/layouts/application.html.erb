@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IrishRailAppV6</title>
+    <title>
+      Irish Rail App <%= content_for?(:page_title) ? " | " + yield(:page_title) : "" %>
+    </title>
+    <%= favicon_link_tag image_path("icons8-tracks-90.png")%>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -14,7 +18,7 @@
   </head>
 
   <body>
-    <main class="container mx-auto px-5">
+    <main class="container mx-auto px-5" style="min-height: 100vh">
       <%#= notice if notice %>
       <%#= alert if alert %>
       <%= yield %>

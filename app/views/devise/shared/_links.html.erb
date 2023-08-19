@@ -1,9 +1,13 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= button_to omniauth_authorize_path(resource_name, provider), data: { turbo: false }, class: " w-full flex items-center p-2 mt-4 mb-7 bg-gray-300 hover:bg-gray-400 cursor-pointer text-black pl-9 rounded-lg" do%>
-      <%= image_tag("google_icon.png", class: "img-responsive", style: "max-width: 3em;") %>
-      <p>Continue with Google</p>
+    <%= button_to omniauth_authorize_path(resource_name, provider), data: { turbo: false },
+                  class: "flex justify-center p-2 mt-4 mb-7 bg-gray-300 hover:bg-gray-400 cursor-pointer
+                  text-black rounded-lg", style: "width: 25rem;" do%>
+      <div class="flex items-center justify-center">
+        <%= image_tag("google_icon.png", class: "img-responsive", style: "max-width: 3em;") %>
+        <p>Continue with Google</p>
+      </div>
     <% end %>
   <% end %>
 <% end %>
