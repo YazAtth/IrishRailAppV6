@@ -72,13 +72,25 @@ class DeparturesController < ApplicationController
       end
     end
 
-
+    if user_signed_in?
+      @is_journey_saved = current_user.saved_journeys.exists?(origin_station: session[:origin_station], destination_station: session[:destination_station])
+    end
 
     @response_pretty = JSON.pretty_generate(@train_route)
     # print(@response_pretty)
 
   end
 
+  def save_journey
+
+    if current_user.saved_journeys.exists?(origin_station: session[:origin_station], destination_station: session[:destination_station])
+      current_user.saved_journeys.find_by(origin_station: session[:origin_station], destination_station: session[:destination_station]).destroy
+    else
+      current_user.saved_journeys.create(origin_station: session[:origin_station], destination_station: session[:destination_station])
+    end
+
+    redirect_to departures_page_path
+  end
 
   def make_request(input_uri)
     uri = URI(input_uri)

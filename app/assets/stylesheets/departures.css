@@ -175,10 +175,22 @@ bottom: 0;
 
 }
 
-.change-journey-button {
+
+
+.departures-page-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding-top: 1em;
+}
+
+.change-journey-button {
+    /*padding-top: 1em;*/
     width: 10em;
     text-align: center;
+}
+
+.save-journey-button {
+    justify-self: end;
 }
 
 
