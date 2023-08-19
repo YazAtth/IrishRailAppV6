@@ -39,27 +39,54 @@
     </div>
 
     <div class="suggested-journeys">
-      <h1 class="text-4xl font-bold text-gray-700">Suggested Journeys</h1>
 
-      <div class="flex justify-center">
-      <p class="text-gray-500">Click on the cards to see the departures</p>
+      <div class="mb-5">
+
+        <div class="flex justify-center">
+          <h1 class="text-4xl font-bold text-gray-700 mb-2">Saved Journeys</h1>
+        </div>
+        <div class="flex justify-center">
+          <p class="text-gray-500">Click on the cards to see the departures</p>
+        </div>
+
+        <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Connolly", destination_station: "Howth Junction") do %>
+          <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Connolly", destination_station: "Howth Junction"} %>
+        <% end %>
+        <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Connolly", destination_station: "Howth Junction") do %>
+          <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Connolly", destination_station: "Howth Junction"} %>
+        <% end %>
+        <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Connolly", destination_station: "Howth Junction") do %>
+          <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Connolly", destination_station: "Howth Junction"} %>
+        <% end %>
+
       </div>
 
-      <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Connolly", destination_station: "Howth Junction") do %>
-        <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Connolly", destination_station: "Howth Junction"} %>
-      <% end %>
+      <div>
 
-      <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Connolly", destination_station: "Maynooth") do %>
-        <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Connolly", destination_station: "Maynooth"} %>
-      <% end %>
+        <div class="flex justify-center">
+          <h1 class="text-4xl font-bold text-gray-700 mb-2">Suggested Journeys</h1>
+        </div>
+        <div class="flex justify-center">
+          <p class="text-gray-500">Click on the cards to see the departures</p>
+        </div>
 
-      <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Heuston", destination_station: "Sallins") do %>
-        <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Heuston", destination_station: "Sallins"} %>
-      <% end %>
+        <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Connolly", destination_station: "Howth Junction") do %>
+          <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Connolly", destination_station: "Howth Junction"} %>
+        <% end %>
 
-      <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Heuston", destination_station: "Cork") do %>
-        <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Heuston", destination_station: "Cork"} %>
-      <% end %>
+        <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Connolly", destination_station: "Maynooth") do %>
+          <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Connolly", destination_station: "Maynooth"} %>
+        <% end %>
+
+        <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Heuston", destination_station: "Sallins") do %>
+          <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Heuston", destination_station: "Sallins"} %>
+        <% end %>
+
+        <%= link_to departures_filter_set_journey_path(origin_station: "Dublin Heuston", destination_station: "Cork") do %>
+          <%= render partial: "suggested-journey-card", locals: {origin_station: "Dublin Heuston", destination_station: "Cork"} %>
+        <% end %>
+
+      </div>
 
     </div>
   </div>
