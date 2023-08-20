@@ -14,9 +14,11 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   # GET /resource/confirmation?confirmation_token=abcdef
   def show
 
+    # Weird bug where the confirmation link goes to user/confirm instead of user/sign-up
+    # so we have a redirect to it here if the user is already confirmed.
     resource = resource_class.confirm_by_token(params[:confirmation_token])
-
     if resource.confirmed?
+      flash[:notice] = "Your email address has been successfully confirmed."
       redirect_to new_user_session_path
     else
       super
