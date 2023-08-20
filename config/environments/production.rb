@@ -5,7 +5,7 @@ Rails.application.configure do
 
   # Devise section
   config.action_mailer.default_url_options = {
-    host: 'https://www.irishrailapp.com',
+    host: 'irishrailapp.com',
   }
   config.action_mailer.delivery_method = :smtp
 
