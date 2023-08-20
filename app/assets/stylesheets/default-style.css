@@ -69,6 +69,10 @@ body {
     text-decoration: underline;
 }
 
+.footer-title {
+    font-family: 'Lora', serif;
+}
+
 
 /* Mobile Screens */
 @media only screen and (max-width: 650px) {

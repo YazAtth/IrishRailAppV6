@@ -1,5 +1,11 @@
 
 
+
+.navbar-title {
+    font-family: 'Lora', serif;
+    /*text-decoration: underline;*/
+}
+
 /* Mobile screens */
 @media only screen and (max-width: 650px) {
 
