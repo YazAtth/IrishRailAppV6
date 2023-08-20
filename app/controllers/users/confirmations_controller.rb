@@ -12,9 +12,15 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   # end
 
   # GET /resource/confirmation?confirmation_token=abcdef
-  # def show
-  #   super
-  # end
+  def show
+
+    if current_user.confirmed?
+      redirect_to root_path
+    else
+      super
+    end
+
+  end
 
   protected
 
