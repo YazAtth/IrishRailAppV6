@@ -58,6 +58,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up for inactive accounts.
   def after_inactive_sign_up_path_for(resource)
+    flash[:notice] = "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes. Check your spam/junk folder if you can't find it."
     new_user_session_path
   end
 end
