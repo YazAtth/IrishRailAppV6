@@ -17,7 +17,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
     resource = resource_class.confirm_by_token(params[:confirmation_token])
 
     if resource.confirmed?
-      redirect_to root_path
+      redirect_to new_user_session_path
     else
       super
     end
