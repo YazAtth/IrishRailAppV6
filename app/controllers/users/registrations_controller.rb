@@ -10,10 +10,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    flash[:notice] = "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account. Check your junk/spam folder if you can't see the email."
-    super
-  end
+  # def create
+  #   super
+  # end
 
   # GET /resource/edit
   # def edit
