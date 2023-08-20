@@ -14,7 +14,9 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   # GET /resource/confirmation?confirmation_token=abcdef
   def show
 
-    if current_user.confirmed?
+    resource = resource_class.confirm_by_token(params[:confirmation_token])
+
+    if resource.confirmed?
       redirect_to root_path
     else
       super
