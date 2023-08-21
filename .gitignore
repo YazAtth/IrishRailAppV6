@@ -40,3 +40,5 @@
 server.csr
 server.key
 server.pass.key
+
+config/.DS_Store
